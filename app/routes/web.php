@@ -14,7 +14,31 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
+});
+
+Route::get('/lamborghini', function () {
+    return view('lamborghini');
+});
+
+Route::get('/ferrari', function () {
+    return view('ferrari');
+});
+
+Route::get('/mclaren', function () {
+    return view('mclaren');
+});
+
+Route::get('/aston martin', function () {
+    return view('aston martin');
+});
+
+Route::get('/bentley', function () {
+    return view('bentley');
+});
+
+Route::get('/rolls royce', function () {
+    return view('rolls royce');
 });
 
 Route::get('/dashboard', function () {
