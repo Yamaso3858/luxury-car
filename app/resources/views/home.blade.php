@@ -72,8 +72,25 @@
             <span>ロールス・ロイス</span>
           </a>
         </li>
+        @foreach($manufacturers as $manufacturer)
+        <li>
+          <a href="/{{ $manufacturer->code }}">
+            <span>{{ $manufacturer->name }}</span>
+            
+          </a>
+        </li>
+        @endforeach
       </ul>
     </nav>
   </header>
+  @foreach($manufacturers as $manufacturer)
+  <div>
+    <div>
+      <h2>NAME:{{ $manufacturer->name }}</h2>
+      <p>URL:<a target="_blank" href="{{ $manufacturer->url }}">ホームページ</a></p>
+      <p>CODE:{{ $manufacturer->code }}</p>
+    </div>
+  </div>
+  @endforeach
 </body>
 </html>

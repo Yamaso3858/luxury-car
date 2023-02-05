@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ManufacturerController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/lamborghini', function () {
     return view('lamborghini');
@@ -40,6 +40,12 @@ Route::get('/bentley', function () {
 Route::get('/rolls royce', function () {
     return view('rolls royce');
 });
+
+Route::get('/manufacturers/create', [ManufacturerController::class, 'create'])->name('manufacturers.create');
+
+Route::post('/manufacturers', [ManufacturerController::class, 'store'])->name('manufacturers.store');
+
+Route::delete('/manufacturers/{manufacturer}', [ManufacturerController::class, 'destroy'])->name('manufacturers.destroy');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
